@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itz.dao.UsersDao">
+<!--    <resultMap id="barData" type="com.itz.model.Bar">-->
+<!--        <id property="barId" column="barId"></id>-->
+<!--        <id property="userId" column="userId"></id>-->
+<!--        <collection property="followBar" column="barId" select="selectfollowBar"></collection>-->
+<!--    </resultMap>-->
+
+    <select id="selectfollowBar" resultType="com.itz.model.FollowBar">
+        select * from follow_bar  where bar_id = #{barId} and user_id=#{userId}
+    </select>
+
+    <select id="findUsersByUserName" parameterType="String" resultType="com.itz.model.Users">
+        select
+       *
+        from users
+        where user_name = #{userName}
+    </select>
+
+
+    <select id="selectFollowUsers" resultType="com.itz.model.Users">
+        select * from users where user_id in(
+             select follow_user_id from follow_users where user_id=#{userId}
+        )
+    </select>
+
+    <select id="selectFans" parameterType="Integer" resultType="com.itz.model.Users">
+        select * from users where user_id in(
+             select user_id from follow_users where follow_user_id=#{userId}
+        )
+    </select>
+
+    <select id="selectFollowBar" resultType="java.util.Map">
+        select  b.bar_id barId,b.bar_name barName,b.pic_name picName,fb.user_id userId,fb.exp,fb.level
+         from bar b
+        left join follow_bar fb
+        on b.bar_id =fb.bar_id
+        where fb.user_id=#{userId} and fb.deleted!=1;
+    </select>
+
+    <select id="selectFollowCount" resultType="int">
+         select count(*) from follow_users where user_id=#{userId}
+    </select>
+    <select id="selectFansCount" resultType="int">
+          select count(*) from follow_users where follow_user_id=#{userId}
+    </select>
+    <select id="selectFollowBarCount" resultType="int">
+          select count(*) from follow_bar where user_id=#{userId}
+    </select>
+    <select id="selectBarCount" resultType="int">
+         select count(*) from post where user_id=#{userId}
+    </select>
+    <select id="selectMyCollection" resultType="java.util.Map">
+ select collectionId,postId,postTitle,userId,nickName,userName,avatar,pi.pic_name picName
+ from (
+	 select a.collection_id collectionId,a.post_id postId,a.post_title postTitle,u.user_id userId,u.nick_name nickName,u.user_name userName,u.avatar avatar
+	 from
+			(select c.collection_id,c.post_id,c.user_id,p.post_title,p.user_id u
+			    from collection c left join post p
+			    on c.post_id =p.post_id where c.user_id=#{userId}) a
+			left join users u on a.u=u.user_id
+	  )b
+left join post_img pi on b.postId=pi.post_id
+group by postId
+    </select>
+    <select id="selectHistory" resultType="java.util.Map">
+        select
+        historyId,
+            postId,
+            postTitle,
+            bar_name barName,
+            createTime,
+            pic_name picName,
+            barId
+        from     (
+                    select
+                        h.history_id historyId,
+                        h.post_id postId,
+                        h.create_time createTime,
+                        post_title postTitle,
+                        bar_id barId
+                    from   history h
+                    join post p on h.post_id = p.post_id
+                    where  h.user_id = #{userId}
+                ) a
+        left join bar b on a.barid = b.bar_id
+        <if test="status!=0">
+            group by barName
+        </if>
+    </select>
+
+</mapper>

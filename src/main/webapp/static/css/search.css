@@ -1,0 +1,86 @@
+body{
+	background-color: #fff;
+}
+.topsearch{
+	display: flex;
+	justify-content: flex-start;
+}
+.searchinput{
+	width: 80%;
+}
+.cancel{
+	margin-left: 20px;
+	margin-top: 5px;
+}
+.item{
+
+	
+	display: flex;
+	justify-content: flex-start;
+}
+.searchhistory span{
+
+	margin-left: 10px;
+	
+}
+.searchitem{
+	margin-left: 10px;
+	margin-bottom: 30px;
+}
+
+.hotsearchrank span{
+	margin: 0 10px ;
+}
+
+.list{
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.rank{
+	width: 20px;
+	margin-left: 10px;
+	margin-top: 10px;
+	background-color: #cdcdcd;
+}
+.rank span{
+	padding-left: 5px;
+}
+.resultbg {
+	display: flex;
+	justify-content: flex-start;
+	background-color: #1a3c6a;
+	border-radius: 15px;
+	margin: 15px 12px;
+	width: 95%;
+	height: 150px;
+	padding-top: 40px;
+}
+
+.resultimg {
+	margin: 0 17px;
+	width: 60px;
+	height: 60px;
+	border-radius: 15px;
+}
+
+.resulttitle {
+	font-size: 22px;
+	font-family: '黑体';
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+.resultinfo {
+	display: flex;
+	flex-direction: column;
+}
+
+.likebtn {
+	background-color: #fff;
+	margin-left: 23px;
+	width: 100px;
+	height: 50px;
+	border-radius: 35px;
+}

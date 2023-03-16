@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itz.dao.PostDao">
+
+    <resultMap id="postData" type="com.itz.model.Post">
+        <id property="postId" column="postId"></id>
+        <collection property="postImgList" column="postId" select="selectPostImg"></collection>
+        <collection property="postUser" column="userId" select="selectPostUserInfo"></collection>
+    </resultMap>
+
+
+    <select id="selectPostImg" resultType="com.itz.model.PostImg">
+        select pic_name picName from post_img where post_id = #{postId}
+    </select>
+    <select id="selectPostUsers" resultType="com.itz.model.Users">
+        select * from users
+    </select>
+
+    <select id="selectPostUserInfo" resultType="com.itz.model.Users">
+        select * from users where user_id=#{userId}
+    </select>
+
+
+    <insert id="insertPost" parameterType="com.itz.model.Post" useGeneratedKeys="true" keyProperty="postId">
+        insert into post(post_title,content,bar_id,user_id) values(#{postTitle},#{content},#{barId},#{userId})
+    </insert>
+
+    <select id="getPostList" resultMap="postData">
+        select * from users u RIGHT JOIN
+           (select
+           user_id userId,
+           post_id postId,
+           post_title postTitle,
+           like_num likeNum,
+           my_like myLike,
+		   content,
+		   b.bar_id barId,
+           b.bar_name barName,
+           a.create_time createTime,
+           a.secret
+           from post a
+           left join bar b on a.bar_id = b.bar_id where a.secret!=1
+           )c
+       on u.user_id= c.userId
+		order by c.createTime desc
+    </select>
+
+    <select id="getMyPostList" parameterType="com.itz.model.Post" resultMap="postData">
+            select userId,user_name userName,nick_name nickName,avatar,postId,postTitle,content,likeNum,myLike,barId,barName,createTime,secret
+            from users u  RIGHT JOIN
+                (select
+                    user_id userId,
+                    post_id postId,
+                    post_title postTitle,
+                    content,
+                    a.like_num likeNum,
+                    a.my_like myLike,
+                    b.bar_id barId,
+                    b.bar_name barName,
+                    a.create_time createTime,
+                    a.secret secret
+                from post a
+                left join bar b on a.bar_id = b.bar_id
+                )c
+            on u.user_id= c.userId where u.user_id=#{userId}
+			order by c.createTime desc
+    </select>
+
+    <select id="getBarList" resultMap="postData">
+               select * from users u  RIGHT JOIN
+                    (select
+                        user_id userId,
+                        post_id postId,
+                        post_title postTitle,
+                        like_num likeNum,
+						my_like myLike,
+                        content,
+                        b.bar_id barId,
+                        b.bar_name barName,
+                        b.pic_name picName,
+                        a.create_time createTime,
+                        a.secret
+                     from post a
+                       left join bar b on a.bar_id = b.bar_id where a.bar_id=#{barId} and a.secret!=1
+                    )c
+               on u.user_id= c.userId
+               order by c.createTime desc
+    </select>
+
+    <select id="getBarInfo" resultType="java.util.Map">
+          select fb.user_id userId,
+                fb.bar_id barId,
+                fb.exp exp,
+                fb.level level,
+                b.bar_name barName,
+                b.pic_name picName
+		from follow_bar fb
+        left join bar b on fb.bar_id = b.bar_id
+        where fb.user_id=#{userId} and b.bar_id=${barId};
+    </select>
+
+    <select id="selectBar" resultType="java.util.Map">
+        select barID,barName,picName,likeNum,count(p.post_id) postNum
+        from
+            (select b.bar_id barID,bar_name barName,pic_name picName,count(fb.user_id) likeNum
+             from bar b
+             left join follow_bar fb on b.bar_id=fb.bar_id where bar_name like "%"#{barName,jdbcType=VARCHAR}"%"
+            group by barId)c
+        left join post p on c.barID=p.bar_id;
+    </select>
+
+    <select id="selectByPostId" resultType="java.util.Map">
+        select userId,user_name userName,nick_name nickName,avatar,postId,postTitle,content,likeNum,myLike,barId,barName,createTime
+        from users u  RIGHT JOIN
+                    (select
+                        user_id userId,
+                        post_id postId,
+                        post_title postTitle,
+                        content,
+                        a.like_num likeNum,
+                        a.my_like myLike,
+                        b.bar_id barId,
+                        b.bar_name barName,
+                        a.create_time createTime,
+                        a.secret
+                    from post a
+                    left join bar b on a.bar_id = b.bar_id
+                    )c
+        on u.user_id= c.userId where postId=#{postId}
+        order by c.createTime desc
+    </select>
+
+
+</mapper>

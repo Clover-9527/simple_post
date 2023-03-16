@@ -1,0 +1,155 @@
+body {
+	background-color: #fff;
+}
+
+.mui-icon-search {
+	color: #B6B6B6;
+}
+
+.mui-title {
+	font-family: "微软雅黑";
+}
+
+.content .head {
+	display: flex;
+	align-items: center;
+	margin: 10px 0 0 10px;
+}
+
+.content .head .headportrait {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	margin-right: 15px;
+}
+
+.content .head .info {
+	flex: 1;
+}
+
+.content .head .info .top .nickname {
+	font-family: "微软雅黑";
+	font-size: 18px;
+	font-weight: 400;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.content .head .info .top .icon-game {
+	color: #ff7200;
+	font-size: 19px;
+}
+
+.top .icon-close {
+	float: right;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.content .head .info .bottom {
+	font-size: 15px;
+	font-weight: 400;
+	color: #c1c1c1;
+	font-family: "微软雅黑";
+}
+
+.content .head .a {
+	margin: 0 10px;
+}
+
+.onlyline {
+	width: 100%;
+	margin: 20px 0 30px 20px;
+	font-family: "微软雅黑";
+}
+
+.onlyline span {}
+
+.onlyline .oimg {
+	display: flex;
+}
+
+.onlyline img {
+	width: 100px;
+	height: 150px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+
+.foot {
+	display: flex;
+	justify-content: center;
+	;
+	border-bottom: 5px solid #f7f7f7;
+	margin-bottom: 20px;
+}
+
+.foot .icon-comment {
+	margin-right: 5px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.foot .commnetNum {
+	margin-right: 100px;
+	cursor: pointer;
+}
+
+.foot .icon-appreciate_light {
+	margin-right: 5px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.foot .likeNum {
+	cursor: pointer;
+}
+
+.menue {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #fff;
+}
+
+.menue div div {
+	font-size: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.menue .home {
+	float: left;
+	width: 20%;
+}
+
+
+
+.menue .enter {
+	float: left;
+	width: 20%;
+}
+
+.menue .new {
+	float: left;
+	width: 20%;
+	margin-top: 10px;
+}
+
+.menue .new span {
+	color: #00b7e6;
+	font-size: 50px;
+}
+
+.menue .message {
+	float: left;
+	width: 20%;
+}
+
+.menue .my {
+	float: left;
+	width: 20%;
+}

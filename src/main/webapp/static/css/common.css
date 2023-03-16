@@ -1,0 +1,20 @@
+#header {
+	background-color: #fff;
+}
+
+.mui-bar-nav {
+    top: 0;
+    -webkit-box-shadow: 0 0px 0px #ccc;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+#header a{
+	color: #000;
+}
+
+.opacity-04{
+	opacity: 0.4;
+}
+.opacity-05{
+	opacity: 0.5;
+}

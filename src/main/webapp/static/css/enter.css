@@ -1,0 +1,105 @@
+.mui-bar img {
+	float: right;
+	margin-top: 3px;
+}
+
+.mui-search .mui-placeholder .mui-icon {
+	margin: 0 5px;
+}
+
+.lastenter {
+	padding-bottom: 10px;
+	border-bottom: 5px solid #f5f5f5;
+}
+
+.lastenter .ltop {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+}
+
+.lastenter .ltop span {
+	color: darkgrey;
+	margin-bottom: 20px;
+}
+
+.lastenter .limg {
+	display: flex;
+	justify-content: start;
+	margin-left: 10px;
+	width: 80%;
+}
+
+.lastenter .limg .tbbox {
+	display: flex;
+	flex-direction: column
+}
+
+.lastenter .limg .tbbox img {
+	margin-right: 10px;
+	margin-top: 10px;
+	width: 80px;
+	height: 80px;
+}
+
+.lastenter .limg .tbbox span {
+	margin-right: 10px;
+	font-size: 10px;
+	text-align: center;
+}
+
+.myconcern {
+	margin-top: 10px;
+
+}
+
+.myconcern .topspan {
+	color: darkgrey;
+	margin-left: 25px;
+}
+
+.ba {
+	float: left;
+	width: 90%;
+	margin-top: 15px;
+	margin-left: 25px;
+
+
+}
+
+.ba .content {
+	float: left;
+	display: flex;
+	justify-content: space-around;
+	padding: 15px;
+	width: 50%;
+	border-top: 1px solid darkgray;
+	border-bottom: 1px solid darkgray;
+}
+
+.ba .content span {
+	font-family: "微软雅黑";
+}
+
+.ba .content img {
+	width: 25px;
+	height: 25px;
+}
+
+.ba .content span:first-child {
+	width: 80%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.more {
+	position: relative;
+}
+
+.more span {
+	position: absolute;
+	top: 10px;
+	left: 30%;
+	color: #0d91ff;
+}

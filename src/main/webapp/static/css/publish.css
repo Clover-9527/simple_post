@@ -1,0 +1,30 @@
+.pro_img{
+    margin-left:10px;
+    margin-top:10px;
+    width:30%;
+    height: 100px;
+    overflow:hidden;
+    /* background: url(images/upload.png) no-repeat center center; */
+    float:left;
+    position: relative;}
+
+.pro_img .pic{ position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    height: 100px;
+    width: 100%;
+}
+
+.pro_img {position:relative}
+
+.pro_img input{position: absolute;width: 100%;height: 100%;margin:0;opacity:0;z-index: 100;}
+
+.pro_img .img-close{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 20px;
+    height: 20px;
+    z-index: 999;
+}

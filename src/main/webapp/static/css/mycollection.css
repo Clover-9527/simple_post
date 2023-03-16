@@ -1,0 +1,58 @@
+.tab {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 20px;
+}
+
+.tab span {
+    font-size: 15px;
+    color: #ababab;
+}
+
+.tabimg {
+    border-radius: 50%;
+    margin: 10px 20px 0 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.followlist {
+    display: flex;
+}
+
+.followinfo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+    width: 50%;
+}
+
+#fbtn {
+    width: 80px;
+    height: 40px;
+    margin-top: 12px;
+    margin-left: 13px;
+    background-color: #ffffff;
+    border: 1px solid #b39090;
+}
+
+.barInfo {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 20px;
+}
+
+.barInfo img {
+    width: 70px;
+    height: 70px;
+}
+
+.barInfo span {
+    font-family: '黑体';
+}
+
+.post-title {
+    margin-left: 15px;
+    margin-top: 5px;
+    width: 255px;
+}

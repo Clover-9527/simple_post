@@ -1,0 +1,68 @@
+body {
+    background-color: #fff;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top img {
+    width: 70px;
+    height: 70px;
+    margin-left: 20px;
+
+}
+.content{
+    margin-bottom: 10px;
+}
+.onlyline{
+    margin: 20px 0 20px 40px;
+}
+.center {
+    display: flex;
+    flex-direction: column;
+    margin-right: 90px;
+}
+.item-bottom{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 80px;
+}
+.barname {
+    font-family: "黑体";
+    margin-bottom: 15px;
+}
+
+.levelinfo {
+    font-family: "黑体";
+    margin-bottom: 5px;
+}
+
+.signbtn {
+    background-color: #3285ff;
+    color: #fff;
+    margin-right: 25px;
+    margin-top: 20px;
+    width: 70px;
+    height: 40px;
+}
+
+.middle {
+    display: flex;
+}
+.imgbox{
+    margin: 10px auto;
+}
+.content .head .info .top .icon-game{
+margin-left: 10px;
+}
+.adddiv{
+    height: 73px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}

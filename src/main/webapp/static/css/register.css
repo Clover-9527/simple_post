@@ -1,0 +1,74 @@
+.container{
+	padding: 120px 10px 0;
+}
+
+.content{
+	width: 100%;
+	background-color: #fff;
+	border-radius: 20px;
+	padding: 0 15px 20px;
+}
+.content .title{
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.mui-input-row input{
+	text-align: center;
+	border-radius: 50px;
+	background-color: #f7f7f7;
+	border: 0;
+}
+
+.mui-icon-eye{
+	left: 0;
+}
+
+.text-link{
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+}
+
+.login-box{
+	margin-top: 30px;
+}
+
+.login-box .login-btn{
+	padding: 8px 0;
+	border-radius: 40px;
+}
+
+.bottom-link{
+	position: fixed;
+	bottom: 10px;
+	width: 100%;
+}
+.bottom-link .gap{
+	width: 1px;
+	height: 10px;
+	background-color: #bcbcbc;
+}
+
+.bottom-link .text-box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bottom-link .text-box .text{
+	padding: 15px;
+	color: #999;
+	font-size: 14px;
+}
+
+.agreement label{
+	font-size: 14px;
+}
+.agreement label span{
+	font-weight: bold;
+	margin: 0 5px;
+}

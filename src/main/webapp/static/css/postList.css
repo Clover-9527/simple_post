@@ -1,0 +1,53 @@
+
+.post-item{
+	padding: 10px 15px 0;
+	background-color: #fff;
+	margin-top: 10px;
+}
+.item-top{
+	color: #999;
+}
+.mui-tab-item{
+	color: #999;
+}
+.top-left .post-name{
+	color: #333;
+}
+.top-left .time{
+	font-size: 14px;
+}
+.item-top{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.item-middle .post-title{
+	font-size: 18px;
+	padding: 5px 0;
+}
+
+
+.post-img img{
+	max-height: 200px;
+	object-fit:cover;
+}
+.post-img-2 img{
+	margin: 0 1%;
+	width: 47%;
+}
+
+.nickname{
+	margin-bottom: 5px;
+}
+.post-img-3 img{
+	margin: 0 0.5%;
+	width: 31%;
+	height: 105px;
+}
+
+.item-bottom{
+	display: flex;
+	justify-content: space-around;
+	padding: 10px 0;
+	color: #5a5a5a;
+}

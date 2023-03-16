@@ -1,0 +1,84 @@
+body{
+	background-color: #fff!important;
+}
+
+.user-info{
+	display: flex;
+	align-items: center;
+	padding: 15px;
+	border-bottom: 1px solid #f7f7f7;
+}
+.user-info .avatar{
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+}
+.user-info .info-middle{
+	flex: 1;
+}
+
+.user-info .info-top{
+	margin-bottom: 5px;
+}
+
+.user-info .info-top .icon-crown{
+	color: #999;
+}
+
+.user-info .info-top .gender{
+	background-color: #209eff;
+	color: #fff;
+	border-radius: 50%;
+	font-size: 12px;
+	padding: 2px;
+}
+
+.user-info .info-bottom{
+	font-size: 14px;
+	color: #a7a7a7;
+}
+
+.user-info .more{
+	width: 15px;
+}
+.user-info .more span{
+	color: #a7a7a7;
+}
+
+.menu{
+	display: flex;
+	justify-content: space-around;
+	padding: 20px 0;
+}
+
+.menu .item-num{
+	font-size: 20px;
+	text-align: center;
+}
+.menu .item-name{
+	text-align: center;
+	font-size: 14px;
+	color: #9c9c9c;
+}
+.gap{
+	height: 8px;
+	background-color: #f7f7f7;
+	width: 100%;
+}
+
+.mui-table-view .iconfont{
+	font-size: 20px;
+	margin-right: 5px;
+}
+.mui-table-view:before {
+	height: 0;
+}
+.mui-table-view:after {
+	height: 0;
+}
+.mui-table-view-cell:after{
+	background-color: #f2f2f2;
+}
+.mui-table-view-cell a{
+	font-size: 15px;
+}
